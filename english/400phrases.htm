@@ -1,0 +1,708 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>400 phrases in Toeic B</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<style>
+		input {
+			width: 80%;
+			height: 25px;
+		}
+		.menu {
+			width: 100%;
+		}
+		.menu a {
+			display: inline-block;
+			margin: 2px 4px 4px 0;
+			min-width: 100px;
+			width: 100px;
+		}
+		.lang-translate {
+			margin: 20px;
+			vertical-align: middle;
+		}
+		.random {
+			margin-top: 5px;
+		}
+		.random input {
+			float: left;
+			width: 25px;
+			height: 30px;
+			margin: 0;
+			line-height: 30px;
+		}
+		.random label {
+			margin-left: 10px;
+			height: 30px;
+			line-height: 30px;
+			float: left;
+		}
+		.btn-lang {
+			display: inline-block;
+			border: 1px solid #ca8633;
+			border-radius: 6px;
+			height: 40px;
+			width: 150px;
+			line-height: 40px;
+			text-align: center;
+			background-color: #e8f4ff;
+			color: #6e8afb;
+			cursor: pointer;
+		}
+		.btn-lang:hover {
+			color: #ec7f1b;
+		}
+		.table-questions {
+			border-spacing: 1px;
+			font-size: 18px;
+		}
+		@media (max-width:760px) {
+			.table-questions {
+				font-size: 18px;
+			}
+		}
+		.table-questions tr {
+			vertical-align: middle;
+		}
+		.table-questions .buffer-row {
+			display: inline-block;
+			height: 2px;
+		}
+		.table-questions td {
+			padding: 4px;
+		}
+		.table-questions input[type="text"] {
+			width: 100%;
+		}
+		.color0-row {
+			background-color: #e5e5e5;
+		}
+		.color1-row {
+			background-color: #f5f5f5;
+		}
+		.english-font {
+			font-family: "Courier";
+		}
+
+		#butResult {
+			border: none;
+			border-radius: 4px;
+			height: 30px;
+			padding: 10px;
+			color: #fff;
+			background-color: #5ea2dc;
+			line-height: 10px;
+			font-size: 14px;
+			cursor: pointer;
+			outline: none;
+		}
+		#butResult:hover {
+			background-color: #e4ac66;
+		}
+	</style>
+
+	<script src="jquery-3.4.0.min.js"></script>
+	<!--<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous">-->
+	<!--</script>-->
+
+	<script language="JavaScript" type="text/JavaScript">
+
+    var listWord_400_phrases = [
+      //["từ", "nghĩa", "phiên âm", "câu vd", ""],
+      ["Accept responsibilities for", "Nhận trách nhiệm về", "", "", ""],
+      ["Apologize A for B", "Xin lỗi A về việc B", "", "", ""],
+      ["At your earliest convenience", "Sao cho thuận tiện nhất với bạn", "", "", ""],
+      ["Propose to widen the road", "Đề nghị mở rộng đường", "", "", ""],
+      ["Full-time employees", "Nhân viên làm việc toàn thời gian", "", "", ""],
+      ["Long-term employment", "Việc làm dài hạn", "", "", ""],
+      ["Ask more information", "Hỏi thêm thông tin", "", "", ""],
+      ["Attendance record", "Bản điểm danh, ghi danh", "", "", ""],
+      ["Attend the meeting", "Tham dự một cuộc họp", "", "", ""],
+      ["Contact the sales department", "Liên lạc với phòng kinh doanh, phòng bán hàng", "", "", ""],
+      ["Visit the new office", "Thăm văn phòng mới", "", "", ""],
+      ["The terms of the agreement", "Những điều khoản của hợp đồng", "", "", ""],
+      ["Meet one’s needs", "Đáp ứng được nhu cầu của ai đó", "", "", ""],
+      ["Interest rate", "Lãi suất", "", "", ""],
+      ["Be interested in", "Quan tâm tới", "", "", ""],
+      ["Be in the company’s best interest", "Vì lợi ích cao nhất của công ty", "", "", ""],
+      ["An applicant for a loan", "Người nộp đơn vay mượn", "", "", ""],
+      ["Applicants for the positions", "Ứng cử viên cho chức vụ", "", "", ""],
+      ["My workload is very heavy", "Khối lượng công việc của tôi rất nặng", "", "", ""],
+      ["Establish a business partnership with another company", "Thiết lập một mối quan hệ cộng tác kinh doanh với một công ty khác", "", "", ""],
+      ["Require three reference letters", "Yêu cầu ba lá thư giới thiệu", "", "", ""],
+      ["Introduce the guest speaker", "Giới thiệu người được mời đến để diễn thuyết", "", "", ""],
+      ["Employ several workers for the construction", "Thuê một vài công nhân cho công trình", "", "", ""],
+      ["Propose a new law to promote employment", "Đề nghị một luật mới để thúc đẩy việc làm", "", "", ""],
+      ["Hire additional programmers", "Thuê thêm những người lập trình viên", "", "", ""],
+      ["The city council", "Hội đồng thành phố", "", "", ""],
+      ["Indicate that", "Chỉ ra rằng", "", "", ""],
+      ["Please visit our website", "Xin hãy ghé thăm website của chúng tôi", "", "", ""],
+      ["Offer a new job", "Đề nghị một công việc mới", "", "", ""],
+      ["Apply for a scholarship", "Nộp đơn xin học bổng", "", "", ""],
+      ["The conference schedule", "Lịch trình hội nghị", "", "", ""],
+      ["Charge high fees for consulting services", "Tính phí cao cho những dịch vụ tư vấn", "", "", ""],
+      ["Donate some money to the orphanage", "Quyên góp tiền cho trại trẻ mồ côi", "", "", ""],
+      ["Agree with the details of a contract", "Đồng ý với những chi tiết của hợp đồng", "", "", ""],
+      ["Propose a training program for new employees", "Đề nghị một chương trình đào tạo cho nhân viên mới", "", "", ""],
+      ["During the meeting", "Trong buổi họp", "", "", ""],
+      ["Report directly to him", "Báo cáo trực tiếp cho anh ấy", "", "", ""],
+      ["Send the memo to the managers", "Gửi một bản thư báo cho những người quản lý", "", "", ""],
+      ["Exercise is beneficial to our health", "Tập thể dục thì có lợi cho sức khỏe", "", "", ""],
+      ["Attend the seminar in the conference room", "Tham dự hội thảo ở trong phòng hội nghị", "", "", ""],
+      ["Organize a day-long safety workshop", "Tổ chức một buổi hội thảo về an toàn lao động kéo dài cả ngày", "", "", ""],
+      ["Reach sales goal", "Đạt mục tiêu doanh số", "", "", ""],
+      ["For the last quarter", "cho quý trước", "", "", ""],
+      ["The sales department", "Phòng kinh doanh, bán hàng", "", "", ""],
+      ["Sell translation software", "Bán phần mềm dịch thuật", "", "", ""],
+      ["Translate English into Vietnamese", "Dịch tiếng Anh sang tiếng Việt", "", "", ""],
+      ["Orderly", "theo thứ tự", "", "", ""],
+      ["Out of order", "bị hỏng", "", "", ""],
+      ["In order to + động từ nguyên thê", "để làm gì đó", "", "", ""],
+      ["Submit the figure to a supervisor", "trình số liệu cho người giám sát", "", "", ""],
+      ["Submission", "Việc đệ trình", "", "", ""],
+      ["Document", "tài liệu, dẫn chứng bằng tài liệu", "", "", ""],
+      ["Deliver a speech", "Phát biểu", "", "", ""],
+      ["Refuse the delivery", "từ chối giao hàng", "", "", ""],
+      ["Raise questions", "đặt câu hỏi", "", "", ""],
+      ["Implement new procedures", "Áp dụng thủ tục mới", "", "", ""],
+      ["Implementation", "việc thi hành", "", "", ""],
+      ["Receive the necessary support", "nhận sự hỗ trợ cần thiết", "", "", ""],
+      ["In writing", "bằng văn bản", "", "", ""],
+      ["Written notification", "thông báo bằng văn bản", "", "", ""],
+      ["Notify the client of the delivery", "Thông báo cho khách hàng về sự giao hàng", "", "", ""],
+      ["Introduce a new product", "Giới thiệu 1 sản phẩm mới", "", "", ""],
+      ["Technical support workers", "Nhân viên phụ trách kỹ thuật", "", "", ""],
+      ["Accommodate a tour group", "Cung cấp phòng cho một nhóm du lịch theo tour", "", "", ""],
+      ["The problem was explained", "Vấn đề đã được giải thích", "", "", ""],
+      ["Choose accounting", "chọn lựa hình thức thanh toán", "", "", ""],
+      ["Deliver your order by tomorrow", "Chuyển cái đơn đặt hàng của bạn trước ngày mai", "", "", ""],
+      ["Arrive at our office", "Đến văn phòng của chúng tôi", "", "", ""],
+      ["Insert an authorization card", "Nhập thẻ ủy quyền vào", "", "", ""],
+      ["Prevent car accidents", "Tránh những tai nạn ô tô", "", "", ""],
+      ["Submit necessary documents to personnel office", "Đệ trình tài liệu cần thiết cho phòng nhân sự", "", "", ""],
+      ["Notify your supervisor", "Thông báo với người giám sát của bạn", "", "", ""],
+      ["Accommodate a large tour group", "Chứa được một nhóm du lịch lớn", "", "", ""],
+      ["Introduce its new high-speed copy machine", "Giới thiệu chiếc máy copy mới tốc độ cao", "", "", ""],
+      ["Renew our contract", "Gia hạn hợp đồng của chúng ta", "", "", ""],
+      ["Write an email to all employees", "Viết một email cho toàn bộ nhân viên", "", "", ""],
+      ["Introduce a new sports car", "Giới thiệu một chiếc xe hơi thể thao", "", "", ""],
+      ["Receive several complaints", "Nhận được một vài sự phàn nàn", "", "", ""],
+      ["Raise difficult questions", "Đặt ra những câu hỏi khó", "", "", ""],
+      ["Agree to work together on the project", "Đồng ý để làm việc cùng nhau trong dự án", "", "", ""],
+      ["Finish the budget report", "Hoàn thành báo cáo ngân sách", "", "", ""],
+      ["Choose a new supplier", "Chọn người cung cấp mới", "", "", ""],
+      ["Explain the financial problem", "Giải thích vấn đề tài chính", "", "", ""],
+      ["Prepare the seminar", "Chuẩn bị cho buổi hội thảo", "", "", ""],
+      ["Visit the production plant", "Thăm nhà máy sản xuất", "", "", ""],
+      ["The proposal was submitted through the internet", "Lời đề nghị được nộp qua Internet", "", "", ""],
+      ["Conduct a new survey", "Tiến hành một cuộc khảo sát", "", "", ""],
+      ["The document was delivered by express mail", "Tài liệu được chuyển phát nhanh", "", "", ""],
+      ["Send the report to the head office", "Gửi báo cáo đến trụ sở chính", "", "", ""],
+      ["The performance was postponed due to bad weather", "Buổi trình diễn bị hủy bởi vì thời tiết xấu", "", "", ""],
+      ["Consider a special bonus", "Cân nhắc một khoản tiền thưởng đặc biệt", "", "", ""],
+      ["Be included in", "được bao gồm trong", "", "", ""],
+      ["Conference schedule", "Lịch trình hội nghị", "", "", ""],
+      ["Information packet", "Gói thông tin", "", "", ""],
+      ["By the end of the week", "Trước cuối tuần", "", "", ""],
+      ["Raise interest rate", "Tăng lãi xuất", "", "", ""],
+      ["Implement a no smoking policy", "Thi hành một chính sách không hút thuốc lá", "", "", ""],
+      ["Review the contract", "Xem xét lại hợp đồng", "", "", ""],
+      ["Write carefully", "Viết một cách cẩn thận", "", "", ""],
+      ["Receive several letters about our new products", "Nhận một vài lá thư về những sản phẩm mới của chúng tôi", "", "", ""],
+      ["Successful candidates", "Những ứng cử viên thành công", "", "", ""],
+      ["Be notified", "được thông báo", "", "", ""],
+      ["Launch its new service", "Tung ra dịch vụ mới của nó", "", "", ""],
+      ["Seek qualified candidates", "Tìm kiếm những ứng cử viên chất lượng", "", "", ""],
+      ["Provide feedback", "Cung cấp phản hồi", "", "", ""],
+      ["Educational programs", "Những chương trình giáo dục", "", "", ""],
+      ["Send your cover letter and résumé", "Gửi thư xin việc và sơ yếu lí lịch", "", "", ""],
+      ["Meet one’s needs", "Đáp ứng nhu cầu của ai", "", "", ""],
+      ["Meet the deadline", "Kịp thời hạn", "", "", ""],
+      ["Pay the rent", "Thanh toán tiền thuê nhà", "", "", ""],
+      ["Sign a contract", "Ký hợp đồng", "", "", ""],
+      ["Signature", "Chữ ký", "", "", ""],
+      ["Reduce its staff", "Cắt giảm nhân sự", "", "", ""],
+      ["Reduction", "Sự cắt giảm", "", "", ""],
+      ["Ship an order", "Giao một đơn hàng", "", "", ""],
+      ["The document was sent to you", "Tài liệu đã được gửi cho bạn", "", "", ""],
+      ["Make necessary revisions", "Tạo ra những sự sửa đổi cần thiết", "", "", ""],
+      ["Be designed to", "Được thiết kế để", "", "", ""],
+      ["Distribute the document", "Phân phát tài liệu", "", "", ""],
+      ["Distributor", "Nhà phân phối", "", "", ""],
+      ["Distribution", "Sự phân phối", "", "", ""],
+      ["Hold a press conference", "Tổ chức họp báo", "", "", ""],
+      ["Review the information", "Xem lại thông tin", "", "", ""],
+      ["The first stage of development", "Bước đầu của sự phát triển", "", "", ""],
+      ["Developer", "Nhà phát triển", "", "", ""],
+      ["Be invited to do", "Được mời để làm gì đó", "", "", ""],
+      ["Send formal invitations", "Gửi lời mời chính thức", "", "", ""],
+      ["Deliver the document", "Giao tài liệu", "", "", ""],
+      ["In person", "Trực tiếp", "", "", ""],
+      ["In writing", "Bằng văn bản", "", "", ""],
+      ["Sign the employment contract", "Ký hợp đồng lao động", "", "", ""],
+      ["The sales department", "Bộ phận bán hàng", "", "", ""],
+      ["The marketing seminar", "Hội thảo Marketing", "", "", ""],
+      ["Distribute the new safety guidelines", "Phân phát bản hướng dẫn an toàn mới", "", "", ""],
+      ["Ship to the factory", "Vận chuyển tới nhà máy", "", "", ""],
+      ["Attendance records", "Bản điểm danh", "", "", ""],
+      ["Be submitted to the personnel department", "Được nộp tới phòng nhân sự", "", "", ""],
+      ["Be revised by the manager", "Được sửa lại bởi quản lý", "", "", ""],
+      ["The contents of this proposal", "Nội dung của sự đề suất", "", "", ""],
+      ["Send the memo to all workers", "Gửi thư báo đến toàn thể công nhân", "", "", ""],
+      ["Reduce production cost", "Giảm chi phí sản xuất", "", "", ""],
+      ["Secretary", "Thư ký", "", "", ""],
+      ["Review all budget reports", "Xem lại những bản báo cáo ngân sách", "", "", ""],
+      ["The accounting manager", "Giám đốc kế toán", "", "", ""],
+      ["The travel budget", "Ngân sách cho việc di chuyển", "", "", ""],
+      ["Reduce substantially", "Giảm một cách đáng kể", "", "", ""],
+      ["Researcher", "Nghiên cứu viên", "", "", ""],
+      ["Develop a new vaccine", "Phát triển 1 loại vắc xin mới", "", "", ""],
+      ["Provide quality services and products", "Cung cấp dịch vụ và sản phẩm chất lượng", "", "", ""],
+      ["Distribute to all employees", "Phân phát đến toàn bộ nhân viên", "", "", ""],
+      ["Pay the rent before the deadline", "Thanh toán tiền thuê nhà trước hạn chót", "", "", ""],
+      ["Reduce the research and development budget", "Giảm ngân quỹ dành cho việc nghiên cứu và phát triển", "", "", ""],
+      ["Propose a new strategy", "Đề xuất 1 chiến lược mới", "", "", ""],
+      ["Increase sales", "Tăng doanh số", "", "", ""],
+      ["The terms of a contract must be reviewed carefully", "Những điều khoản của hợp đồng cần được xem lại một cách cẩn thận", "", "", ""],
+      ["Provide the food for the party", "Cung cấp thức ăn cho bữa tiệc", "", "", ""],
+      ["Registration is required", "Sự đăng ký là bắt buộc", "", "", ""],
+      ["Join the event", "Tham gia vào sự kiện", "", "", ""],
+      ["Constructive criticism", "Sự phê bình mang tính xây dựng", "", "", ""],
+      ["Encouraging sign", "Dấu hiệu đáng khích lệ", "", "", ""],
+      ["Improve productivity", "Cải thiện năng suất", "", "", ""],
+      ["Inspect the quality", "Kiểm tra chất lượng", "", "", ""],
+      ["Conduct an inspection", "Tiến hành 1 cuộc thanh tra", "", "", ""],
+      ["During the performance", "Trong thời gian của buổi biểu diễn", "", "", ""],
+      ["Immediate supervisor", "Giám sát trực tiếp", "", "", ""],
+      ["Under the supervision of Mr Thanh Phan", "Dưới sự giám sát của ông Thành Phan", "", "", ""],
+      ["Be satisfied with the products", "Hài lòng với sản phẩm", "", "", ""],
+      ["Attract many customers", "Thu hút nhiều khách hàng", "", "", ""],
+      ["Avoid an economic slump", "Tránh suy thoái kinh tế", "", "", ""],
+      ["Become available", "Trở nên sẵn có để dùng", "", "", ""],
+      ["Be billed directly", "Được tính tiền một cách trực tiếp", "", "", ""],
+      ["Pay a bill", "Thanh toán một hóa đơn", "", "", ""],
+      ["Compete for", "Cạnh tranh cho", "", "", ""],
+      ["Compete with/against", "Cạnh tranh với", "", "", ""],
+      ["Approve the construction plan", "Chấp thuận một kế hoạch công trình", "", "", ""],
+      ["A legal advisor", "Cố vấn hợp pháp", "", "", ""],
+      ["It’s advisable to", "Thích hợp để", "", "", ""],
+      ["Overtime work is not allowed", "Làm việc quá thời gian là không được phép", "", "", ""],
+      ["Paid vacation", "Kỳ nghỉ được thanh toán bởi công ty", "", "", ""],
+      ["You are invited to attend the seminar", "Bạn được mời để tham dự buổi hội thảo", "", "", ""],
+      ["Competition in global market", "Cạnh tranh trên thị trường toàn cầu", "", "", ""],
+      ["Customer satisfaction is our top priority", "Sự hài lòng của khách hàng là sự ưu tiên lớn nhất của chúng tôi", "", "", ""],
+      ["Products can be ordered through Internet", "Sản phẩm có thể được đặt qua Internet", "", "", ""],
+      ["Construction on the road is on schedule", "Công trình trên con đường này thì đang diễn ra đúng kế hoạch", "", "", ""],
+      ["Construction will be completed by next month", "Công trình sẽ được hoàn thành trước tháng sau", "", "", ""],
+      ["Receive a written response", "Nhận một phản hồi bằng văn bản", "", "", ""],
+      ["Meet the safety standards", "Đáp ứng những tiêu chuẩn an toàn", "", "", ""],
+      ["The research and development spending", "Chi phí nghiên cứu và phát triển", "", "", ""],
+      ["Provide translation of official documents", "Cung cấp bản dịch cho những tài liệu chính", "", "", ""],
+      ["Cause damage to the building", "Gây ra thiệt hại cho tòa nhà", "", "", ""],
+      ["Accept responsibility for lost items", "Nhận trách nhiệm cho những món hàng bị mất", "", "", ""],
+      ["Give satisfaction to our customers", "Mang tới sự hài lòng cho khách hàng của chúng tôi", "", "", ""],
+      ["Receive official approval", "Nhận được sự chấp thuận chính thức", "", "", ""],
+      ["Take a day off", "Nghỉ 1 ngày", "", "", ""],
+      ["Increase competition", "Gia tăng sự cạnh tranh", "", "", ""],
+      ["Make many changes to the proposal", "Tạo ra rất nhiều sự thay đổi cho cái sự đề xuất", "", "", ""],
+      ["Renew your application", "Làm mới đơn xin việc", "", "", ""],
+      ["Reserve the right", "Có quyền", "", "", ""],
+      ["Please turn off your phone", "Xin hãy tắt điện thoại", "", "", ""],
+      ["Maximize your productivity", "Tối đa hóa năng suất của bạn", "", "", ""],
+      ["Observing a match", "quan sát một trận đấu", "", "", ""],
+      ["Offering someone a meal", "cung cấp cho ai đó một bữa ăn", "", "", ""],
+      ["Opening a drawer", "mở một ngăn kéo", "", "", ""],
+      ["Operating heavy machinery", "vận hành máy móc hạng nặng", "", "", ""],
+      ["Ordering some food from a menu", "đặt hàng một số thực phẩm từ thực đơn", "", "", ""],
+      ["Organizing some paper", "Sắp xếp một số giấy tờ", "", "", ""],
+      ["Packing for a trip pack", "đóng gói cho một chuyến đi", "", "", ""],
+      ["Painting a picture", "vẽ một bức tranh", "", "", ""],
+      ["Parking one’s bike in a rack", "đỗ xe đạp của ai vào giá để xe", "", "", ""],
+      ["Passing a box to another", "Chuyển một chiếc hộp cho ai đó", "", "", ""],
+      ["Paying for the item", "trả tiền cho các sản phẩm", "", "", ""],
+      ["Pedaling down the street", "đạp xe xuống đường phố", "", "", ""],
+      ["Photographing the scenery", "chụp ảnh phong cảnh", "", "", ""],
+      ["Picking up pastries from the trays", "chọn bánh ngọt từ các khay", "", "", ""],
+      ["Picking vegetables in a field", "chọn rau trong một khu vực", "", "", ""],
+      ["Pilling some books on the shelves", "chồng một số cuốn sách lên kệ", "", "", ""],
+      ["Piloting a boat out to sea", "dẫn tàu ra biển", "", "", ""],
+      ["Placing a coin in the slot", "đặt một đồng xu vào khe", "", "", ""],
+      ["Planting a garden in front of the store", "trồng một khu vườn ở phía trước cửa hàng", "", "", ""],
+      ["Playing a musical instrument", "chơi một nhạc cụ", "", "", ""],
+      ["Plugging in a machine", "cắm điện vào máy móc", "", "", ""],
+      ["Pointing a finger to the monitor", "chỉ một ngón tay lên màn hình", "", "", ""],
+      ["Polishing a window", "đánh bóng cửa sổ", "", "", ""],
+      ["Posing for a picture", "sắp đặt tư thế cho một bức ảnh", "", "", ""],
+      ["Posting a notice on the window", "đăng một thông báo trên cửa sổ", "", "", ""],
+      ["Pouring drinks into glasses", "rót đồ uống vào ly", "", "", ""],
+      ["Preparing food in two pans", "chuẩn bị thức ăn trong hai chảo", "", "", ""],
+      ["Pulling a cart", "kéo một giỏ hàng", "", "", ""],
+      ["Purchasing loaves of the bread", "mua những ổ bánh mì", "", "", ""],
+      ["Pushing a cart through the line", "đẩy một chiếc xe qua các hàng", "", "", ""],
+      ["Putting a key into a lock", "đặt một chìa khóa vào ổ khóa", "", "", ""],
+      ["Putting away one’s instruments", "Sắp xếp, xếp gọn nhạc cụ", "", "", ""],
+      ["Putting down one’s pen", "đặt bút của ai xuống", "", "", ""],
+      ["Putting on sweaters", "mặc áo len", "", "", ""],
+      ["Putting up a poster", "dán 1 tấm áp phích", "", "", ""],
+      ["Racing down the street", "phóng xe xuống đường", "", "", ""],
+      ["Raising sales", "nâng cao doanh số bán hàng", "", "", ""],
+      ["Raking the leaves", "cào lá", "", "", ""],
+      ["Reaching across the table", "đi qua cái bàn", "", "", ""],
+      ["Reaching for an item", "với tay lấy 1 đồ vật( hàng hoá)", "", "", ""],
+      ["Reading a sign", "đọc 1 dấu hiệu", "", "", ""],
+      ["Rearranging the furniture", "sắp xếp đồ đạc", "", "", ""],
+      ["Reattaching the wheel to the cart", "gắn bánh xe cho xe kéo", "", "", ""],
+      ["Relaxing outdoors", "thư giãn ngoài trời", "", "", ""],
+      ["Removing one’s coat", "cởi áo khoác", "", "", ""],
+      ["Repairing fishing equipment", "sửa chữa dụng cụ câu cá", "", "", ""],
+      ["Resting on the grass", "nghỉ ngơi trên bãi cỏ", "", "", ""],
+      ["Restocking the shelves", "thêm đồ vào giá sách", "", "", ""],
+      ["Riding bicycles", "đạp xe", "", "", ""],
+      ["Rinsing off the counter", "rửa cái kệ", "", "", ""],
+      ["Rolling up one’s sleeve", "cuộn tay áo,", "", "", ""],
+      ["Rowing a boat", "chèo thuyền", "", "", ""],
+      ["Running ahead of the man", "chạy trước mặt người đàn ông", "", "", ""],
+      ["Running out to board the bus", "chạy ra để lên xe bus", "", "", ""],
+      ["Standing on the floor", "ngồi trên sàn nhà", "", "", ""],
+      ["Selling a pattern", "bán mẫu, hoa văn", "", "", ""],
+      ["Serving beverages", "phục vụ đồ uống", "", "", ""],
+      ["Setting the table", "xếp chỗ xếp bàn", "", "", ""],
+      ["Sewing a dress", "sửa quần áo", "", "", ""],
+      ["Shaking hands", "bắt tay", "", "", ""],
+      ["Shelving merchandise", "xếp hàng hoá", "", "", ""],
+      ["Shielding one’s eyes with one’s hand", "lấy tay che mắt", "", "", ""],
+      ["Shoveling snow", "xúc dọn tuyết", "", "", ""],
+      ["Signing some forms", "kí theo mẫu", "", "", ""],
+      ["Sipping some water", "uống từng ngụm nước", "", "", ""],
+      ["Sitting across from each other", "ngồi gần nhau", "", "", ""],
+      ["Sitting by a plant", "ngồi cạnh một cái cây", "", "", ""],
+      ["Sitting in a circle", "ngồi thành vòng", "", "", ""],
+      ["Slicing pieces of cake", "cắt những lát bánh", "", "", ""],
+      ["Sliding down a hill", "trượt xuống đồi", "", "", ""],
+      ["Smiling at a friend", "cười với bạn bè", "", "", ""],
+      ["Sorting envelopes", "xếp thư", "", "", ""],
+      ["Speaking into a microphone", "nói bằng micro", "", "", ""],
+      ["Stacking books", "xếp 1 chồng sách", "", "", ""],
+      ["Stacking up some bricks", "xếp gạch", "", "", ""],
+      ["Standing at the sink", "đứng ở bồn rửa chén", "", "", ""],
+      ["Standing up straight", "đứng thẳng", "", "", ""],
+      ["Staring at a screen", "nhìn chăm chăm vào màn hình", "", "", ""],
+      ["Staring into the distance", "nhìn chăm chăm vào khoảng không", "", "", ""],
+      ["Stepping into the building", "leo bậc thang lên nhà", "", "", ""],
+      ["Stretching the hose", "kéo căng ống (vòi)", "", "", ""],
+      ["Strolling along the path", "đi dạo trên đường", "", "", ""],
+      ["Stuffing some clothes into a bag", "nhét quần áo vào trong túi", "", "", ""],
+      ["Sweeping the room", "quét dọn phòng", "", "", ""],
+      ["Swimming in the lake", "bơi trong hồ", "", "", ""],
+      ["Taking a dish out of the oven", "lấy một cái đĩa ra khỏi lò nướng", "", "", ""],
+      ["Taking the nap on the bench", "có một giấc ngủ ngắn trên ghế dài", "", "", ""],
+      ["Taking on the telephone telephone", "nhận cuộc gọi", "", "", ""],
+      ["Tasting the soup", "nếm món canh", "", "", ""],
+      ["Tidying up one’desk", "dọn bàn của ai đó", "", "", ""],
+      ["Transporting some building materials", "vận chuyển một số vật liệu xây dựng", "", "", ""],
+      ["Trying on a sweater", "thử một cái áo len", "", "", ""],
+      ["Turning at the corner", "cua xe", "", "", ""],
+      ["Turning the pages of a book", "lật các trang của một cuốn sách", "", "", ""],
+      ["Tying a scarf around one’s neck", "buộc một chiếc khăn quanh cổ ai đó", "", "", ""],
+      ["Tying up the ropes", "buộc chặt những sợi dây thừng", "", "", ""],
+      ["Typing on the keyboard", "đánh máy", "", "", ""],
+      ["Unfolding a map", "mở bản đồ", "", "", ""],
+      ["Using a bank machine", "sử dụng máy rút tiền", "", "", ""],
+      ["Evaluate employee’s performance", "Đánh giá sự thể hiện của nhân viên", "", "", ""],
+      ["Look forward to meeting you", "Mong đợi được gặp bạn", "", "", ""],
+      ["Get your supervisor’s approval", "Nhận được sự chấp thuận của người giám sát", "", "", ""],
+      ["Present your identification", "Trình diện giấy tờ tùy thân", "", "", ""],
+      ["Be expected to begin next month", "Được mong đợi để bắt đầu tháng tới", "", "", ""],
+      ["Intense competitions", "Những cuộc cạnh tranh mãnh liệt", "", "", ""],
+      ["Find more information", "Tìm thêm thông tin", "", "", ""],
+      ["The beginning of the seminar", "Phần đầu của hội thảo", "", "", ""],
+      ["Prepare the foods to your satisfaction", "Chuẩn bị thức ăn làm cho bạn hài lòng", "", "", ""],
+      ["Expansion project", "Dự án mở rộng", "", "", ""],
+      ["Billing statement", "Bản kê khai", "", "", ""],
+      ["The meeting will be postponed", "Cuộc họp sẽ bị hoãn lại", "", "", ""],
+      ["Join the club", "Gia nhập câu lạc bộ", "", "", ""],
+      ["Continue to attract customers", "Tiếp tục thu hút khách hàng", "", "", ""],
+      ["Tax requirement", "Yêu cầu về thuế", "", "", ""],
+      ["We wish to apologize", "Chúng tôi muốn xin lỗi", "", "", ""],
+      ["Job openings", "Những cơ hộ nghề nghiệp", "", "", ""],
+      ["Open an account", "Mở tài khoản", "", "", ""],
+      ["Be checked regularly", "Được kiểm tra thường xuyên", "", "", ""],
+      ["Pay by cash", "Thanh toán bằng tiền mặt", "", "", ""],
+      ["Registration instructions", "Hướng dẫn đăng ký", "", "", ""],
+      ["The company hires new employees", "Công ty thuê thêm những nhân viên mới", "", "", ""],
+      ["Deliver products to their customers", "Chuyển sản phẩm đến cho khách hàng của họ", "", "", ""],
+      ["Request the report", "Yêu cầu bản báo cáo", "", "", ""],
+      ["A notice has been posted", "Một thông báo vừa được đăng lên", "", "", ""],
+      ["The documents were sent by e-mail", "Những tài liệu được gửi bằng email", "", "", ""],
+      ["Expand its market", "Mở rộng thị trường", "", "", ""],
+      ["Need a partner", "Cần một đối tác", "", "", ""],
+      ["Reject the nonsmoking policy", "Bác bỏ chính sách không hút thuốc", "", "", ""],
+      ["The furniture is scheduled to be delivered on Monday", "Đồ đạc được lên kế hoạch để được vận chuyển vào thứ 2", "", "", ""],
+      ["Post office", "Bưu điện", "", "", ""],
+      ["Require on form of identification", "Yêu cầu 1 loại giấy tờ tùy thân", "", "", ""],
+      ["Attend the monthly business meeting", "Tham dự cuộc họp kinh doanh hàng tháng", "", "", ""],
+      ["All department managers", "Tất cả những quản lý phòng ban", "", "", ""],
+      ["The conditions for a promotion", "Những điều kiện cho sự thăng chức", "", "", ""],
+      ["The plans for the project", "Những kế hoạch cho dự án", "", "", ""],
+      ["The material for the workshops", "Tài liệu cho những buổi hội thảo", "", "", ""],
+      ["All items are discounted by", "Tất cả mặt hàng được giảm giá", "", "", ""],
+      ["Lower subscription rates", "Giảm tỉ lệ giá thuê bao", "", "", ""],
+      ["Many prizes were awarded to the marketing department", "Nhiều giải thưởng được trao tặng cho phòng marketing", "", "", ""],
+      ["The suggestions in the report need to be reviewed", "Những sự gợi ý trong bản báo cáo cần được xem xét lại", "", "", ""],
+      ["The opening date of the new public libraries", "Ngày khai trương của những thư viện công cộng mới", "", "", ""],
+      ["The shipment of your orders", "Sự vận chuyển của những đơn hàng", "", "", ""],
+      ["Be delayed due to some defective products", "Bị hoãn bởi vì một vài sản phẩm lỗi", "", "", ""],
+      ["Be finally distributed to the new employees", "Cuối cùng được phân phát tới những nhân viên mới", "", "", ""],
+      ["The contents of this report", "Những nội dung của bản báo cáo này", "", "", ""],
+      ["Be checked for errors", "Được kiểm tra lỗi", "", "", ""],
+      ["All interested students are invited", "Tất cả những học sinh quan tâm được mời", "", "", ""],
+      ["Admission is free", "Tiền vào cửa là miễn phí", "", "", ""],
+      ["If you wish to join, please register now", "Nếu bạn muốn gia nhập, xin hãy đăng ký ngay bây giờ", "", "", ""],
+      ["Submit the form to me", "Nộp đơn cho tôi", "", "", ""],
+      ["Conduct a study", "Tiến hành một cuộc nghiên cứu", "", "", ""],
+      ["The report is included", "Bản báo cáo được bao gồm", "", "", ""],
+      ["Inspect the quality of the products", "Kiểm tra chất lượng của sản phẩm", "", "", ""],
+      ["Return the books", "Trả lại sách", "", "", ""],
+      ["Return to his office", "Quay trở lại văn phòng của anh ấy", "", "", ""],
+      ["Speak to counselor", "Nói chuyện với người cố vấn", "", "", ""],
+      ["Recovery from the recession", "Sự phục hồi từ suy thoái", "", "", ""],
+      ["Mr Thanh Phan was elected as vice president", "Ông Phan Thành đã được bầu cử làm phó chủ tịch", "", "", ""],
+      ["Be transferred to another office", "Được chuyển tới văn phòng khác", "", "", ""],
+      ["Checks must be deposited by noon", "Ngân phiếu cần được đặt cọc trước buổi trưa", "", "", ""],
+      ["Construction of the new plant", "Việc thi công nhà máy mới", "", "", ""],
+      ["Discuss the delay", "Thảo luận về sự chậm trễ", "", "", ""],
+      ["A leave of absence", "Vắng mặt có phép", "", "", ""],
+      ["Leave your hotel key", "Để lại chìa khóa khách sạn", "", "", ""],
+      ["Leave immediately for Singapore", "Đi Singapore ngay lập tức", "", "", ""],
+      ["We provided a free meal yesterday", "Chúng tôi đã cung cấp bữa ăn miễn phí ngày hôm qua", "", "", ""],
+      ["Attended the conference last year", "Đã tham dự hội nghị", "", "", ""],
+      ["I included the report in my email yesterday", "Tôi đã bao gồm bản báo cáo trong email ngày hôm qua", "", "", ""],
+      ["Mr Thanh Phan will be transferred to Hai Phong branch next week", "Ông Thành sẽ được Chuyển đến chi nhánh Hải Phòng tuần tới", "", "", ""],
+      ["The sales manager joined our company 6 years ago", "Giám đốc kinh doanh đã tham gia Công ty của chúng tôi 6 năm trước", "", "", ""],
+      ["The money was deposited in the bank", "Tiền đã được đặt cọc vào ngân hàng", "", "", ""],
+      ["The City Hall was constructed in", "Tòa thị chính đã được xây dựng vào năm", "", "", ""],
+      ["Kathy will deliver good news tomorrow", "Kathy sẽ mang đến tin tốt lành ngày mai", "", "", ""],
+      ["I will submit the proposal in person next week", "Tôi sẽ đệ trình cái lời đề nghị vào tuần tới 1 cách trực tiếp", "", "", ""],
+      ["Discuss the problem", "Thảo luận vấn đề", "", "", ""],
+      ["The company will construct a new assembly plant next year", "Công ty sẽ xây dựng một máy lắp ráp mới vào năm tới", "", "", ""],
+      ["An orientation for new employees", "Một sự định hướng cho những nhân viên mới", "", "", ""],
+      ["Implement a new vacation policy as of next month", "Thi hành một chính sách nghỉ lễ kể từ tháng tới", "", "", ""],
+      ["Return from my trip", "Trở lại từ chuyến đi của tôi", "", "", ""],
+      ["The manager will meet with the president", "Giám đốc sẽ gặp chủ tịch", "", "", ""],
+      ["The bank will raise interest rates next month", "Ngân hàng sẽ tăng lãi suất vào tháng tới", "", "", ""],
+      ["The economy will recover from the inflation", "Nền kinh tế sẽ phục hồi sau lạm phát", "", "", ""],
+      ["Effective next week", "Có hiệu lực từ tuần tới", "", "", ""],
+      ["Be in charge of the sales department", "Phụ trách phòng bán hàng", "", "", ""],
+      ["Spend considerable time training new employees", "Dành một lượng thời gian đáng kể để đào tạo nhân viên mới", "", "", ""],
+      ["Spend much money on advertising", "Dành nhiều tiền vào quảng cáo", "", "", ""],
+      ["It usually takes one hour to get to my school", "Thường mất 1 giờ để đi tới trường", "", "", ""],
+      ["Recruit an experienced sales manager", "Tuyển thêm một giám đốc bán hàng có kinh nghiệm", "", "", ""],
+      ["Charge no fees to local residents", "Không tính phí cho cư dân địa phương", "", "", ""],
+      ["Provide better service to our customers", "Cung cấp dịch vụ tốt hơn cho khách hàng", "", "", ""],
+      ["Increase our efforts", "Gia tăng những nỗ lực", "", "", ""],
+      ["The blueprint for the office", "Bản thiết kế cho văn phòng", "", "", ""],
+      ["The recruitment of sales personnel", "Sự tuyển dụng cho nhân sự phòng bán hàng", "", "", ""],
+      ["All budget reports will be reviewed by the accounting team", "Toàn bộ những bản báo cáo ngân sách sẽ được xem xét lại bởi đội kế toán", "", "", ""],
+      ["Mr Kim’s resignation", "Sự từ chức của ông Kim", "", "", ""],
+      ["Meet the needs of all citizens", "Đáp ứng được nhu cầu của cư dân thành phố", "", "", ""],
+      ["It was impossible to provide those services", "Thật là không thể cung cấp những cái dịch vụ này", "", "", ""],
+      ["The lack of technology and equipment", "Sự thiếu công nghệ và thiết bị", "", "", ""],
+      ["Welcome your comments and suggestions", "Hoan nghênh những bình luận và gợi ý", "", "", ""],
+      ["Help us serve you better", "Giúp chúng tôi phục vụ các bạn tốt hơn", "", "", ""],
+		];
+
+    /**
+     |********************************************************************
+     |********************************************************************
+     |
+     | FUNCTIONS
+     |
+     |********************************************************************
+     |********************************************************************
+     */
+
+    function getRangeOfRandom(mini, len, isNoRandom) {
+		//return array co 'len' elements tu mini ->  mini + (len - 1)
+      rans = new Array(len);
+      maxi = mini + (len - 1);
+
+      for (var i = 0; i < len; ++ i) {
+        ran = Math.floor(Math.random() * (maxi+1)) + mini;
+        if (isNoRandom) {
+          ran = i + mini;
+        }
+        exist = false;
+        for (j = 0; j < i; ++ j) {
+          if (rans[j] == ran) {
+            exist = true;
+            break;
+          }
+        }
+        if (! exist) {
+          rans[i] = ran;
+        }else {
+          -- i;
+        }
+      }
+      return rans;
+    }//End of function getRangeOfRandom(mini, len)
+
+    function writeAllGimonshi() {
+      var rows = '';
+      var colorRow = '';
+      var gimonshiFont, kaiketsuFont;
+      if (translateLanguage == 'eng-vie') {
+        gimonshiFont = 'english-font';
+			} else {
+        kaiketsuFont = 'english-font';
+			}
+
+      for (i = 0; i < listRandomOrder.length; ++ i) {
+        colorRow = ' class="color0-row"';
+        if (i % 2 == 1) {
+          colorRow = ' class="color1-row"';
+        }
+
+        rows += "  <tr" + colorRow + " valign=\"top\">";
+        rows += "    <td class='" + gimonshiFont + "'><div id=\"gimonshi" + i + "\">" + (listRandomOrder[i] + 1) + ". " + listWord[listRandomOrder[i]][0] + "</div></td>";
+        rows += "    <td class='" + kaiketsuFont + "' onclick='check(" + i + ");'><div id=\"kaiketsu" + i + "\"></div></td>";
+        rows += "    <td><input id=\"kotae" + i + "\" type=\"text\" value=\"\" onBlur='check(" + i + ");' onkeypress='checkEnterKey(" + i + ")'></td>";
+        rows += "    <td><div align=\"center\"><span  id=\"maruBatsu" + i + "\"></span></div></td>";
+        rows += "  </tr>";
+      }//for
+
+      return rows;
+    }//End of function writeAllGimonshi()
+
+    function showLang(lang) {
+      if (lang != translateLanguage) {
+        // Reverse order of columns if needed
+        translateLanguage = lang;
+        listWord.map(function(value, index) {
+          var tem = listWord[index][0];
+          listWord[index][0] = listWord[index][1];
+          listWord[index][1] = tem;
+        });
+      }
+
+      var isNoRandom = $('#no-random:checked').length;
+      listRandomOrder = getRangeOfRandom(0, listWord.length, isNoRandom);
+
+      // Clear table question
+      var tr0 = $('.table-questions tbody tr')[0];
+      var tr1 = $('.table-questions tbody tr')[1];
+      $('.table-questions tbody tr').remove();
+      $('.table-questions tbody').append(tr0);
+      $('.table-questions tbody').append(tr1);
+      $('.table-questions tbody').append(writeAllGimonshi());
+    }
+
+    function check(index) {
+      var curKanji = listWord[listRandomOrder[index]];
+      var strKaiketsu = curKanji[1];
+      for(c = 2; c <= 4; c++) {
+        if (curKanji[c] != "") {
+          strKaiketsu += ' | ' + curKanji[c]
+        }
+      }
+      eval("kaiketsu" + index).innerText = strKaiketsu;
+      var currentMaruBatsuTag = eval("maruBatsu" + index);
+      var kotaeTag = eval("kotae" + index);
+      if (kotaeTag.value.toLowerCase() == curKanji[1].toLowerCase()) {
+        if (currentMaruBatsuTag.innerText == "") {
+          ++ maruSen;
+        }
+        currentMaruBatsuTag.style.color = 'blue';
+        currentMaruBatsuTag.innerText = '○';
+      }else {
+        if (currentMaruBatsuTag.innerText == "") {
+          ++ batsuSen;
+        }
+        currentMaruBatsuTag.style.color = 'red';
+        currentMaruBatsuTag.innerText = 'x';
+      }
+      kotaeTag.disabled = true;
+    }//End of function check(index)
+
+		// Check answer when user press enter
+    function checkEnterKey(index) {
+      if (event.keyCode == 13) {
+        check(index);
+        eval("kotae" + (index + 1)).focus();
+			}
+		}
+
+    function viewResult() {
+      document.all.divAllSen.innerText = listWord.length;
+      document.all.divMaruSen.innerText = maruSen + ' (' + Math.ceil((maruSen / listWord.length) * 100) + '%)';
+      document.all.divBatsuSen.innerText = batsuSen;
+    }//End of function viewResult()
+
+    function resetKotae() {
+      for (i = 0; i < listRandomOrder.length; ++ i) {
+        eval("kotae"+i).value = "";
+      }//for
+      document.all.texKotae.select();
+    }
+
+    var lesson = new URL(location.href).searchParams.get('lesson');
+    var listWord = lesson ? eval("listWord_" + lesson) : listWord_400_phrases;
+
+    var listRandomOrder = getRangeOfRandom(0, listWord.length);
+
+    var translateLanguage = 'eng-vie';
+    var maruSen = 0;
+    var batsuSen = 0;
+	</script>
+</head>
+<body onload="showLang('vie-eng')">
+<div class="menu">
+	<a href="?lesson=400_phrases">400 phrases</a>
+</div>
+<div class="lang-translate">
+	<span class="btn-lang" onclick="showLang('eng-vie')">Eng - Vie</span>
+	<span class="btn-lang" onclick="showLang('vie-eng')">Vie - Eng</span><br>
+	<div class="random">
+		<input type="checkbox" id="no-random">
+		<label for="no-random">No Random</label>
+	</div>
+</div>
+<div></div>
+<table class="table-questions" cellSpacing="0" cellPadding="0" width="100%" border="0">
+	<tbody>
+	<tr vAlign="top" align="center">
+		<td width="30%">Question</td>
+		<td width="30%">⬇Click to view answer</td>
+		<td width="15%">
+			<div id="Kotae"><input type="text" value="Type answer. Tab / Enter to next" name="texKotae">
+			</div>
+		</td>
+		<td align="center" width="5%">○ | x</td>
+	</tr>
+	<tr class="buffer-row">
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>
+			<div align="center">&nbsp;</div>
+		</td>
+	</tr>
+	</tbody>
+</table>
+<br>
+<table height="54" cellSpacing="0" cellPadding="0" width="40%" border="0">
+	<tr vAlign="top">
+		<td width="25%"><input id="butResult" onclick="viewResult()" type="button" value="Result"></td>
+		<td align="center" width="20%">All
+			<div id="divAllSen"></div>
+		</td>
+		<td align="center" width="29%">Correct
+			<div id="divMaruSen"></div>
+		</td>
+		<td align="center" width="26%">Wrong
+			<div id="divBatsuSen"></div>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

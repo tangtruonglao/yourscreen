@@ -1,0 +1,270 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Toeic B vocabulary</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+input {
+	width: 80%;
+	height: 25px;
+}
+.menu {
+	width: 100%;
+}
+.menu a {
+	display: inline-block;
+	margin: 2px 4px 4px 0;
+	min-width: 100px;
+	width: 140px;
+}
+.lang-translate {
+	margin: 20px;
+	vertical-align: middle;
+}
+.random input {
+	width: 20px;
+}
+.random label {
+	line-height: 25px;
+	vertical-align: text-bottom;
+}
+.btn-lang {
+	display: inline-block;
+	border: 1px solid #ca8633;
+	border-radius: 6px;
+	height: 40px;
+	width: 150px;
+	line-height: 40px;
+	text-align: center;
+	background-color: #e8f4ff;
+	color: #6e8afb;
+	cursor: pointer;
+}
+.btn-lang:hover {
+	color: #ec7f1b;
+}
+.table-questions {
+	border-spacing: 2px;
+	font-family: "Courier", sans-serif;
+	font-size: 14px;
+}
+.table-questions tr {
+	vertical-align: middle;
+}
+.table-questions td {
+	padding: 6px 4px;
+}
+.table-questions input[type="text"] {
+	width: 100%;
+}
+/*.color0-row {*/
+	/*background-color: #e5e5e5;*/
+/*}*/
+/*.color1-row {*/
+	/*background-color: #f5f5f5;*/
+/*}*/
+
+#butResult {
+	border: none;
+	border-radius: 4px;
+	height: 30px;
+	padding: 10px;
+	color: #fff;
+	background-color: #5ea2dc;
+	line-height: 10px;
+	font-size: 14px;
+	cursor: pointer;
+	outline: none;
+}
+#butResult:hover {
+	background-color: #e4ac66;
+}
+</style>
+
+<script type="text/css" src="jquery-3.4.0.min.js"></script>
+<!--<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous">-->
+<!--</script>-->
+
+<script language="JavaScript" type="text/JavaScript">
+
+const listWord_sentences_1 = [
+  //["câu", "nghĩa", "chú thích"],
+  ["Present simple is used to talk about schedules, timetable and itineraries.||Thì hiện tại được dùng để nói về thời gian biểu, lịch trình.", ""],
+  ["Present continuous is used to talk about fixed future plans.||Thì hiện tại tiếp diễn được dùng để nói về kế hoạch tương lai cố định.", ""],
+  ["Past simple is used in conditional sentences type 2.||Thì quá khứ đơn được dùng trong câu điều kiện loại 2.", ""],
+  ["Company employees at construction site on Nguyen Hue street always weat safety helmets at a protective measure.||Những nhân viên công ty ở công trường trên đường Nguyễn Huệ luôn đội mũ bảo hiểm như là một biện pháp bảo hộ.", ""],
+  ["2 years ago, some of the athletes left school to pursue a professional career or the Olympics.||", ""],
+  ["||", ""],
+  ["||", ""],
+  ["||", ""],
+  ["||", ""],
+  ["||", ""],
+  ["||", ""],
+  ["||", ""],
+  ["||", ""],
+  ["||", ""],
+  ["||", ""],
+  ["||", ""],
+  ["||", ""],
+  ["||", ""],
+];
+
+/**
+ |********************************************************************
+ |********************************************************************
+ |
+ | FUNCTIONS
+ |
+ |********************************************************************
+ |********************************************************************
+*/
+
+function getRangeOfRandom(mini, len, isNoRandom) {
+//return array co 'len' elements tu mini ->  mini + (len - 1)
+	rans = new Array(len);
+	maxi = mini + (len - 1);
+
+	for (let i = 0; i < len; ++ i) {
+		ran = Math.floor(Math.random() * (maxi+1)) + mini;
+		if (isNoRandom) {
+		  ran = i + mini;
+		}
+		exist = false;
+		for (j = 0; j < i; ++ j) {
+			if (rans[j] === ran) {
+				exist = true;
+				break;
+			}
+		}
+		if (! exist) {
+			rans[i] = ran;
+		}else {
+			-- i;
+		}
+	}
+	return rans;
+}//End of function getRangeOfRandom(mini, len)
+
+function writeAllGimonshi() {
+	let rows = '';
+	let colorRow = '';
+	for (let i = 0; i < listRandomOrder.length; ++ i) {
+		colorRow = ' class="color0-row"';
+		if (i % 2 === 1) {
+			colorRow = ' class="color1-row"';
+		}
+
+		rows += "  <tr" + colorRow + " valign=\"top\">";
+		rows += "    <td><div id=\"gimonshi" + i + "\">" + (1 + i) + ". " + listWord[listRandomOrder[i]][0] + "</div></td>";
+		rows += "    <td class='kaiketsu' onclick='check(" + i + ");'><div id=\"kaiketsu" + i + "\"></div></td>";
+		rows += "  </tr>";
+	}//for
+
+	return rows;
+}//End of function writeAllGimonshi()
+
+function showLang(lang) {
+	if (lang !== translateLanguage) {
+    // Reverse order of columns if needed
+		translateLanguage = lang;
+		listWord.map(function(value, index) {
+			const tem = listWord[index][0];
+			listWord[index][0] = listWord[index][1];
+			listWord[index][1] = tem;
+		});
+	}
+
+  const isNoRandom = $('#no-random:checked').length;
+  listRandomOrder = getRangeOfRandom(0, listWord.length, isNoRandom);
+
+  // Clear table question
+	const tr = $('.table-questions tbody tr');
+  const tr0 = tr[0];
+  const tr1 = tr[1];
+  tr.remove();
+  const tBody = $('.table-questions tbody');
+  tBody.append(tr0);
+  tBody.append(tr1);
+  tBody.append(writeAllGimonshi());
+}
+
+function check(index) {
+  const curKanji = listWord[listRandomOrder[index]];
+  let strKaiketsu = curKanji[1];
+	if (curKanji[2] !== "") {
+		strKaiketsu += ' | ' + curKanji[2]
+	}
+
+	eval("kaiketsu" + index).innerText = strKaiketsu;
+}//End of function check(index)
+
+// Check answer when user press enter
+//function checkEnterKey(index) {
+//  if (event.keyCode === 13) {
+//    check(index);
+//  }
+//}
+
+function viewResult() {
+	document.all.divAllSen.innerText = listWord.length;
+	document.all.divMaruSen.innerText = maruSen + ' (' + Math.ceil((maruSen / listWord.length) * 100) + '%)';
+	document.all.divBatsuSen.innerText = batsuSen;
+}//End of function viewResult()
+
+//function resetKotae() {
+//	for (let i = 0; i < listRandomOrder.length; ++ i) {
+//		eval("kotae"+i).value = "";
+//	}//for
+//	document.all.texKotae.select();
+//}
+
+const translateLanguage = 'eng-vie';
+const lesson = new URL(location.href).searchParams.get('lesson');
+const listWord = lesson ? eval("listWord_" + lesson) : listWord_sentences_1;
+const listRandomOrder = getRangeOfRandom(0, listWord.length);
+
+const maruSen = 0;
+const batsuSen = 0;
+		</script>
+	</head>
+	<body onload="showLang('vie-eng')">
+		<div class="menu">
+			<a href="?lesson=sentences_1">Sentences 20</a>
+		</div>
+		<div class="lang-translate">
+			<span class="btn-lang" onclick="showLang('eng-vie')">Eng - Vie</span>
+			<span class="btn-lang" onclick="showLang('vie-eng')">Vie - Eng</span><br>
+			<div class="random">
+				<input type="checkbox" id="no-random"><label for="no-random">No Random</label>
+			</div>
+		</div>
+		<div></div>
+		<table class="table-questions" cellSpacing="0" cellPadding="0" width="100%" border="0">
+			<tbody>
+				<tr vAlign="top" align="center">
+					<td width="50%">Question</td>
+					<td width="50%">⬇Click to view answer</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		<table style="height: 54px;" cellSpacing="0" cellPadding="0" width="40%" border="0">
+			<tr vAlign="top">
+				<td width="25%"><input id="butResult" onclick="viewResult()" type="button" value="Result"></td>
+				<td align="center" width="20%">All
+					<div id="divAllSen"></div>
+				</td>
+				<td align="center" width="29%">Correct
+					<div id="divMaruSen"></div>
+				</td>
+				<td align="center" width="26%">Wrong
+					<div id="divBatsuSen"></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

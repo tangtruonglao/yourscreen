@@ -1,0 +1,588 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>Toeic B vocabulary</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+input {
+	width: 80%;
+	height: 25px;
+}
+.menu {
+	width: 100%;
+}
+.menu a {
+	display: inline-block;
+	margin: 2px 4px 4px 0;
+	min-width: 100px;
+	width: 140px;
+}
+.lang-translate {
+	margin: 20px;
+	vertical-align: middle;
+}
+.random input {
+	width: 20px;
+}
+.random label {
+	line-height: 25px;
+	vertical-align: text-bottom;
+}
+.btn-lang {
+	display: inline-block;
+	border: 1px solid #ca8633;
+	border-radius: 6px;
+	height: 40px;
+	width: 150px;
+	line-height: 40px;
+	text-align: center;
+	background-color: #e8f4ff;
+	color: #6e8afb;
+	cursor: pointer;
+}
+.btn-lang:hover {
+	color: #ec7f1b;
+}
+.table-questions {
+	border-spacing: 1px;
+	font-family: "Courier", sans-serif;
+	font-size: 14px;
+}
+.table-questions tr {
+	vertical-align: middle;
+}
+.table-questions td {
+	padding: 4px;
+}
+.table-questions input[type="text"] {
+	width: 100%;
+}
+/*.color0-row {*/
+	/*background-color: #e5e5e5;*/
+/*}*/
+/*.color1-row {*/
+	/*background-color: #f5f5f5;*/
+/*}*/
+
+#butResult {
+	border: none;
+	border-radius: 4px;
+	height: 30px;
+	padding: 10px;
+	color: #fff;
+	background-color: #5ea2dc;
+	line-height: 10px;
+	font-size: 14px;
+	cursor: pointer;
+	outline: none;
+}
+#butResult:hover {
+	background-color: #e4ac66;
+}
+</style>
+
+<script type="text/css" src="jquery-3.4.0.min.js"></script>
+<!--<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous">-->
+<!--</script>-->
+
+<script language="JavaScript" type="text/JavaScript">
+
+/**
+ |********************************************************************
+ |********************************************************************
+ |
+ | READING
+ |
+ |********************************************************************
+ |********************************************************************
+ */
+
+const listWord_reading_1 = [
+  //["từ", "nghĩa", "phiên âm", "câu vd", "nghĩa câu vd"],
+  ["last 2 days", "2 ngày trước", "", "", ""],
+  ["2 days ago", "cách đây 2 ngày", "", "", ""],
+  ["next 2 days", "2 ngày tới", "", "", ""],
+  ["2 days later", "2 ngày sau", "", "", ""],
+  ["in 20 minutes", "20 phút nữa", "", "", ""],
+	["always", "at all times", "", "", ""],
+	["usually", "frequently", "", "", ""],
+	["often", "frequently", "", "", ""],
+	["sometimes", "at times", "", "", ""],
+	["every day", "mọi ngày (adverb)", "", "", ""],
+	["everyday", "mọi ngày (adjective)", "", "", ""],
+	["at this time, at the present time, at present, for the time being", "now (4 cụm)", "", "", ""],
+	["reluctantly", "miễn cưỡng, do dự", "", "He reluctantly agreed to my proposal.", ""],
+	["carry out", "thực thi, thực hành", "", "", ""],
+	["representative", "người đại diện", "", "", ""],
+	["replacement part", "phụ tùng thay thế", "", "", ""],
+	["reach", "đạt đến (con số)", "", "", ""],
+	["banquet", "bữa tiệc", "", "", ""],
+	["market share", "thị phần", "", "", ""],
+	["applicant", "ứng viên", "", "", ""],
+	["domestic fuel price", "giá nhiên liệu nội địa", "", "", ""],
+	["set aside", "dành riêng ra", "", "", ""],
+	["waste disposal", "phân hủy rác", "", "", ""],
+	["ribbon cutting ceremony", "lễ cắt băng (khánh thành)", "ˈsɛrəməni", "", ""],
+	["celebrity", "người nổi tiếng", "", "", ""],
+	["curator", "người trông viện bảo tàng", "", "", ""],
+	["fulfill", "thỏa mãn (nhu cầu), lấp đầy", "", "", ""],
+	["exhibition", "triển lãm", "ɛksɪˈbɪʃ(ə)n", "", "", "", "", ""],
+	["facility", "công cụ, thiết bị, tiện nghi", "", "", ""],
+	["artifact", "đồ tạo tác", "", "", ""],
+	["wing", "cánh", "", "", ""],
+	["user manual", "sách hướng dẫn", "", "", ""],
+	["outsell", "bán nhiều hơn", "", "", ""],
+	["intern", "thực tập sinh", "", "", ""],
+	["allocate", "phân bổ (tiền, công việc)", "æl.ə.keɪt", "", ""],
+	["inventory", "hàng còn trong kho, tồn kho", "", "", ""],
+	["anticipate", "mong đợi; lường trước", "", "", ""],
+	["outstanding review", "đánh giá tốt, đánh giá xuất sắc", "", "", ""],
+	["associate", "người làm chung, đồng nghiệp", "", "", ""],
+	["unveil", "tiết lộ, bỏ mạng che mặt", "", "", ""],
+	["veil", "che giấu; mạng che mặt", "", "", ""],
+	["consultation", "việc tư vấn", "", "", ""],
+	["dispatch", "gởi", "", "", ""],
+	["guarantee", "đảm bảo", "", "", ""],
+	["construction site", "công trường", "", "", ""],
+	["protective measure", "biện pháp an toàn", "", "", ""],
+	["pursue a professional career", "theo đuổi sự nghiệp chuyên nghiệp", "", "", ""],
+	["reasonable price", "giá cả phải chăng", "", "", ""],
+	["affordable", "rẻ, vửa túi tiền", "", "", ""],
+	["affordable price", "giá vừa túi tiền", "", "", ""]
+];
+
+/*
+const listWord_reading_2 = [
+	["stimulate", "kích thích, xúc tiến", "", "", ""],
+	["simulate", "già vờ, bắt chước", "", "", ""],
+	["stimulate growth", "kích thích sự tăng trưởng", "", "", ""],
+	["corporate", "thuộc về công ty", "", "", ""],
+	["by the time", "= before", "", "", ""],
+	["rate", "xếp hạng", "", "", ""],
+	["operation", "vận hành, hoạt động", "", "", ""],
+	["accurate", "chính xác", "", "", ""],
+	["decorate", "trang hoàng", "", "", ""],
+	["delicious line of chocolates", "dòng socola ngon", "", "", ""],
+	["need, want, deserve, require", "cần được (4 từ)", "", "", ""],
+	["need fixing", "cần được sửa 1", "", "", ""],
+	["need to be fixed", "cần được sửa 2", "", "", ""],
+	["want fixing", "cần được sửa 3", "", "", ""],
+	["want to be fixed", "cần được sửa 4", "", "", ""],
+	["annoyed at", "bực bội", "", "", ""],
+	["engaged (to)", "đã đính ước, hứa hôn (với)", "", "", "adj"],
+	["involved in", "có liên quan tới", "", "", ""],
+	["absorbed in", "say mê, miệt mài vào", "", "", ""],
+	["absorbed in a book", "ngấu nghiến đọc sách", "", "", ""],
+	["composed of", "bình tĩnh, điềm tĩnh trước...", "", "", ""],
+	["known with", "nổi tiếng", "", "", ""],
+	["renowned with", "nổi tiếng", "", "", ""],
+	["dedicated to the work", "tận tâm với công việc", "", "", ""],
+	["stay fit", "vẫn mi nhon", "", "", ""],
+	["resemble her", "giống cô ấy", "", "", ""],
+	["I have Ty open the door.", "Tôi nhờ Ty mở cửa.", "", "", ""],
+	["I have the door opened.", "Tôi nhờ người ta mở cửa.", "", "", ""],
+	["expertise", "sự thành thạo, tinh thông", "ɛkspɚˈtis", "", ""],
+	["require, command, order", "ra lệnh (3 từ)", "", "", ""],
+	["banquet room", "phòng tiệc", "", "", ""],
+	["Should it rain tomorrow", "Giả sử mai trời mưa (10%)", "", "", ""],
+	["It is imperative that", "Thật cấp bách,...", "", "", ""],
+	["It is vital that", "Có điều quan trọng sống còn,...", "", "", ""],
+	["essential", "cốt yếu, thiết yếu", "", "", ""],
+	["urge", "thúc giục, cố nài", "", "", ""],
+	["Doctor advises that he not smoke.", "Bác sĩ khuyên anh ấy đừng hút thuốc.", "", "", ""],
+	["instruct", "chỉ dẫn, hướng dẫn", "", "", ""],
+	["spit bath instruction", "hướng dẫn, dạy tắm nhanh", "", "", ""],
+	["rather well", "khá tốt, khá ổn, khá giỏi", "", "", ""],
+	["mayor", "ngài thị trưởng", "", "", ""],
+	["nova", "sao mới, tân tinh", "", "", ""],
+	["renovate", "đổi mới, canh tân, sửa lại", "", "", ""],
+	["lecture hall", "giảng đường", "", "", ""],
+	["feature, incorporate, complete with, include, compose of, consist of", "bao gồm (6 từ)", "", "", ""],
+	["comparative market", "thị trường cạnh tranh", "", "", ""],
+	["turn, become", "trở thành, trở nên (+)", "", "", ""],
+  ["run", "trở nên (-)", "", "", ""],
+  ["trim", "tỉa", "", "", ""],
+  ["sidewalk", "lề đường", "", "They are walking on the sidewalk.", ""]
+];
+
+const listWord_reading_3 = [
+  //["từ", "nghĩa", "phiên âm", "câu vd", "nghĩa câu vd"],
+  ["look, feel, taste, sound, smell", "5 động từ cảm giác", "", "", ""],
+  ["+ adj", "động từ cảm giác + ?", "", "", ""],
+  ["seem, appear", "2 động từ quan điểm", "", "", ""],
+  ["+ adj", "động từ quan điểm + ?", "", "seem, appear", ""],
+  ["He appears older than he really is.", "Anh ấy nhìn có vẻ già hơn tuổi.", "", "", ""],
+  ["become, get, go, turn (+), run (-)", "5 động từ thay đổi trạng thái", "", "", ""],
+  ["+ adj", "động từ thay đổi trạng thái + ?", "become, get, go, turn (+), run (-)", "", ""],
+  ["Hair is starting to turn grey.", "Tóc bắt đầu bạc đi.", "", "", ""],
+  ["make, find, keep, leave, try", "? + sb/st + adj (làm, khiến...)", "", "", ""],
+  ["appreciative", "cảm kích, đánh giá cao", "", "", ""],
+  ["appreciable", "thấy rõ được, đáng kể", "", "", ""],
+  ["appreciate", "đánh giá cao (verb)", "", "", ""],
+  ["considerate", "cẩn thận, chu đáo", "", "", ""],
+  ["considerable", "đáng để xem xét, đáng kể", "", "", ""],
+  ["beneficent", "có lợi, hay làm phúc", "", "", ""],
+  ["beneficent", "từ thiện (noun)", "", "", ""],
+  ["beneficial", "có ích, có lợi", "", "Exercise is beneficial to our health", ""],
+  ["classic", "kinh điển", "", "", ""],
+  ["classical", "cổ điển", "", "", ""],
+  ["continual", "xảy ra thường, không ngớt, liên miên (-)", "", "", ""],
+  ["responsive", "sẵn sàng hưởng ứng, dễ đáp trả", "", "", ""],
+  ["responsible", "có trách nhiệm, đáng tin cậy", "", "", ""],
+  ["economic", "thuộc kinh tế", "", "", ""],
+  ["economic zone", "khu kinh tế", "", "", ""],
+  ["economical", "tiết kiệm", "", "", ""],
+  ["industrial", "thuộc công nghiệp", "", "", ""],
+  ["industrial zone/park", "khu công nghiệp", "", "", ""],
+  ["industrious", "cần cù, siêng năng", "", "", ""],
+  ["successive", "liên tục, kế tiếp", "", "", ""],
+  ["momentary", "ngắn gọn, tạm thời, thoáng qua", "", "", ""],
+  ["momentous", "trọng yếu, quan trọng", "", "", ""],
+  ["respectful", "tôn trọng, kính trọng, lễ phép", "", "", ""],
+  ["respective", "tương ứng, riêng lẽ, riêng từng cái", "", "", ""],
+  ["favorable circumstance", "điều kiện thuận lợi", "", "", ""],
+  ["successive, continous, consecutive, uninterrupted", "liên tục (4 từ)", "", "", ""],
+  ["terrace", "hiên nhà, sân thượng", "", "", ""],
+  ["pave", "lát đá", "", "", ""],
+  ["make a turn", "rẽ, quẹo", "", "", ""],
+  ["train track", "đường rây", "", "", ""],
+  ["She is looking toward the lake.", "Cô ấy đang nhìn về hướng cái hồ.", "", "", ""],
+  ["ducks are floating", "những con vịt đang bơi", "", "", ""],
+  ["ramp", "dốc thoai thoải, miếng nối", "", "", ""],
+  ["buffet", "tiệc đứng", "(American) bəˈfei", "", ""],
+  ["subway platform", "sân đón tàu điện ngầm", "", "", ""],
+  ["train is pulling out", "xe lửa đang chạy ra", "", "", ""],
+  ["oven", "bếp lò", "ˈʌvn", "", ""],
+  ["conference", "hội thảo", "", "since I arrived at this conference", ""],
+  ["convention", "hội nghị, hội thảo; hiệp ước", "", "the theme of this year’s district convention", "chủ đề của hội nghị quận năm nay"],
+  ["accommodate", "chứa, cho trọ", "", "", ""],
+  ["accommodation", "nhà ở, nhà trọ; tiện nghi", "", "many of the booked accommodations were canceled", ""]
+];
+
+const listWord_reading_4 = [
+  //["từ", "nghĩa", "phiên âm", "câu vd", "nghĩa câu vd"],
+  ["intonation", "ngữ điệu, âm điệu", "", "the raise and fall of the voice in speaking", ""],
+  ["spotted", "lốm đốm", "", "", ""],
+  ["mobile", "di động, lưu động", "", "", ""],
+  ["motive", "động cơ, chuyển động, vận động", "", "", ""],
+  ["session", "buổi, khóa, phiên họp", "", "", ""],
+  ["step", "bậc tam cấp, bậc lên xuống", "", "They are talking on the steps.", "Họ đang nói chuyện trên bậc tam cấp. At the step = ở khu bậc tam cấp"],
+  ["address", "nói chuyện trước..., diễn thuyết", "", "A man is addressing the audience.", ""],
+  ["scatter||rãi, gieo, rơi vãi", "ˈskætə", "", ""],
+  ["cashier||nhân viên tính tiền, thủ quỹ", "", "", ""],
+  ["counter||quầy tính tiền, quầy", "", "", ""],
+  ["knapsack||ba lô", "", "", ""],
+  ["sack||bao tải; cách chức", "", "", ""],
+  ["wheelbarrow||xe cút kít, xe rùa", "", "", ""],
+  ["music stand||giá nhạc", "", "", ""],
+  ["claim||đòi quyền, yêu sách", "", "", ""],
+  ["aim||nhắm, chĩa; cố gắng", "", "", ""],
+  ["ladder||cái thang", "", "", ""],
+  ["fountain||đài phun nước, nguồn nước", "", "", ""],
+  ["cheek||gò má", "", "", ""],
+  ["chin||cằm", "", "", ""],
+  ["picturesque||đẹp như tranh", "pɪkʧəˈrɛsk", "", ""],
+  ["roundabout||chỗ quanh co, vòng xuyến", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+];
+
+const listWord_equivalent_1 = [
+  //["từ", "nghĩa", "phiên âm", "câu vd", "chú ý"],
+  ["multiple, various, many, numerous||nhiều", "", "", ""],
+  ["place, location, spot, venue||nơi, địa điểm", "", "", ""],
+  ["conference, convention||hội nghị, hội thảo", "", "", ""],
+  ["survey, questionnaire||khảo sát, bảng câu hỏi", "", "", ""],
+  ["luncheon, lunch||bữa ăn trưa", "ˈlʌntʃən", "", ""],
+  ["terrific, awesome||tuyệt vời; nhấn mạnh số lượng/mức độ", "", "The police car drove past at a terrific speed.", ""],
+  ["training, orientation||huấn luyện, đào tạo", "", "The department has arranged an orientation session.", ""],
+  ["notify, inform, announce, publicize||", "thông báo", "", ""],
+  ["client, customer, patron||khách hàng", "", "", ""],
+  ["take place, occur, happen||xảy ra", "", "", ""],
+  ["free, complimentary||", "kɒmpləˈmɛntəri", "", ""],
+  ["submit, hand in, turn in||nộp", "", "", ""],
+  ["signature, autograph||chữ ký", "", "", ""],
+  ["go over, come by, drop by, drop in, visit||ghé qua", "", "", ""],
+  ["firm, company||công ty", "", "", ""],
+  ["furniture, furnishings||đồ đạc, đồ gỗ", "", "", ""],
+  ["utility, service||dịch vụ", "", "", ""],
+  ["cater, provide||cung cấp, phục vụ", "", "", ""],
+  ["hire, recruit, employ||tuyển dụng", "", "", ""],
+  ["specialize in, major in||chuyên về", "", "", ""],
+  ["contract, agreement, deal||hợp đồng", "", "", ""],
+  ["in stock, ready to sale, ready to use||còn hàng", "", "", ""],
+  ["discount (v), deduct in cost, reduce in cost, mark down||giảm giá", "", "", ""],
+  ["store (v), save, stockpile, put away, stash, reserve||cất, lưu trữ", "", "", ""],
+  ["consistent, unchanging, constant||nhất quán, kiên định", "", "", ""],
+  ["flying colors, great success||hoàn thành xuất sắc", "", "", ""],
+  ["innovative, creative, original, fresh, new||mới, cách tân, cải tiến", "", "", ""],
+  ["outstanding, awesome, excellent, exceptional, prominent||xuất sắc, nổi bật", "", "", ""],
+  ["suit, fit, satisfy||hợp, thỏa mãn", "", "", ""],
+  ["illustrious, well known, renowned, famed, celebrated||nổi tiếng", "", "", ""],
+  ["indispensable, essential, requisite||thiết yếu", "", "", ""],
+  ["contact, reach, call, get in touch, get a hold||liên lạc", "", "", ""],
+  ["work out, to end, have a specific result, succeed||kết thúc, hoàn thành", "", "", ""],
+  ["sleep, get shut-eye, go to bed||ngủ", "", "", ""],
+  ["talk, speak, have a conversation, chat, address, lecture, deliver a speech, give a speech, give a lecture||nói, nói chuyện", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["||", "", "", ""],
+  ["", "", "", "", ""]
+];
+*/
+
+/**
+ |********************************************************************
+ |********************************************************************
+ |
+ | LISTENING
+ |
+ |********************************************************************
+ |********************************************************************
+ */
+
+/*
+const listWord_listening_1 = [
+  //["từ", "nghĩa", "phiên âm", "câu vd", "nghĩa câu vd"],
+  ["porch", "hành lang, mái hiên", "", "", ""],
+  ["leaf through", "lật trang, đọc nhanh", "", "The man is leafing through the paper.", ""],
+  ["is folded in half", "được gấp làm đôi", "", "", ""],
+  ["gaze at", "nhìn chằm chằm", "", "He is gazing at the scenery.", ""],
+  ["scenery", "phong cảnh", "", "", ""],
+  ["inspect", "duyệt, kiểm tra", "", "", ""],
+  ["glance at", "liếc nhìn, nhìn lướt qua", "", "She glanced at me as she walked past.", "Cô ấy liếc nhìn tôi khi đi ngang qua."],
+  ["microscope", "kính hiển vi", "", "She is looking through a microscope.", ""],
+  ["display case", "a glass case used for displaying products", "", "tủ kính bày hàng", ""],
+  ["window case, display case, shop window", "tủ kính bày hàng (3 từ)", "", "", ""],
+  ["window display", "cửa sổ trưng bày", "", "5 pro tips for creating window display", ""],
+  ["admire", "khâm phục, ngưỡng mộ; chiêm ngưỡng", "", "I admire your passion.", "Tôi ngưỡng mộ đam mê của bạn."],
+  ["admire", "khâm phục, ngưỡng mộ; chiêm ngưỡng", "", "Tom and Nobita are admiring the scenery as they are holding hands.", "Tom và Nobita đang tay trong tay chiêm ngưỡng phong cảnh."],
+  ["dime", "một hào, rẻ tiền", "", "insert a dime into the machine", ""],
+  ["refer", "tham khảo", "", "refer to a document", "tham khảo tài liệu"],
+  ["hallway", "tiền sảnh, phòng đợi trước", "", "", ""],
+  ["||", "", "", ""]
+];
+*/
+
+/**
+ |********************************************************************
+ |********************************************************************
+ |
+ | FUNCTIONS
+ |
+ |********************************************************************
+ |********************************************************************
+*/
+
+function getRangeOfRandom(mini, len, isNoRandom) {
+//return array co 'len' elements tu mini ->  mini + (len - 1)
+	rans = new Array(len);
+	maxi = mini + (len - 1);
+
+	for (let i = 0; i < len; ++ i) {
+		ran = Math.floor(Math.random() * (maxi+1)) + mini;
+		if (isNoRandom) {
+		  ran = i + mini;
+		}
+		exist = false;
+		for (j = 0; j < i; ++ j) {
+			if (rans[j] === ran) {
+				exist = true;
+				break;
+			}
+		}
+		if (! exist) {
+			rans[i] = ran;
+		}else {
+			-- i;
+		}
+	}
+	return rans;
+}//End of function getRangeOfRandom(mini, len)
+
+function writeAllGimonshi() {
+	let rows = '';
+	let colorRow = '';
+	for (i = 0; i < listRandomOrder.length; ++ i) {
+		colorRow = ' class="color0-row"';
+		if (i % 2 === 1) {
+			colorRow = ' class="color1-row"';
+		}
+
+		rows += "  <tr" + colorRow + " valign=\"top\">";
+		rows += "    <td><div id=\"gimonshi" + i + "\">" + (1 + i) + ". " + listWord[listRandomOrder[i]][0] + "</div></td>";
+		rows += "    <td onclick='check(" + i + ");'><div id=\"kaiketsu" + i + "\"></div></td>";
+    rows += "    <td><input id=\"kotae" + i + "\" type=\"text\" value=\"\" onBlur='check(" + i + ");' onkeypress='checkEnterKey(" + i + ")'></td>";
+    rows += "    <td><div align=\"center\"><span  id=\"maruBatsu" + i + "\"></span></div></td>";
+		rows += "  </tr>";
+	}//for
+
+	return rows;
+}//End of function writeAllGimonshi()
+
+function showLang(lang) {
+	if (lang !== translateLanguage) {
+    // Reverse order of columns if needed
+		translateLanguage = lang;
+		listWord.map(function(value, index) {
+			const tem = listWord[index][0];
+			listWord[index][0] = listWord[index][1];
+			listWord[index][1] = tem;
+		});
+	}
+
+  const isNoRandom = $('#no-random:checked').length;
+  listRandomOrder = getRangeOfRandom(0, listWord.length, isNoRandom);
+
+  // Clear table question
+	const tr = $('.table-questions tbody tr');
+  const tr0 = tr[0];
+  const tr1 = tr[1];
+  tr.remove();
+  const tBody = $('.table-questions tbody');
+  tBody.append(tr0);
+  tBody.append(tr1);
+  tBody.append(writeAllGimonshi());
+}
+
+function check(index) {
+	const curKanji = listWord[listRandomOrder[index]];
+	let strKaiketsu = curKanji[1];
+	for(c = 2; c <= 4; c++) {
+		if (curKanji[c] !== "") {
+			strKaiketsu += ' | ' + curKanji[c]
+		}
+	}
+	eval("kaiketsu" + index).innerText = strKaiketsu;
+  const currentMaruBatsuTag = eval("maruBatsu" + index);
+  const kotaeTag = eval("kotae" + index);
+	if (kotaeTag.value.toLowerCase() === curKanji[1].toLowerCase()) {
+		if (currentMaruBatsuTag.innerText === "") {
+			++ maruSen;
+		}
+		currentMaruBatsuTag.style.color = 'blue';
+		currentMaruBatsuTag.innerText = '○';
+	}else {
+		if (currentMaruBatsuTag.innerText === "") {
+			++ batsuSen;
+		}
+		currentMaruBatsuTag.style.color = 'red';
+		currentMaruBatsuTag.innerText = 'x';
+	}
+  kotaeTag.disabled = true;
+}//End of function check(index)
+
+// Check answer when user press enter
+//function checkEnterKey(index) {
+//  if (event.keyCode === 13) {
+//    check(index);
+//    eval("kotae" + (index + 1)).focus();
+//  }
+//}
+
+function viewResult() {
+	document.all.divAllSen.innerText = listWord.length;
+	document.all.divMaruSen.innerText = maruSen + ' (' + Math.ceil((maruSen / listWord.length) * 100) + '%)';
+	document.all.divBatsuSen.innerText = batsuSen;
+}//End of function viewResult()
+
+//function resetKotae() {
+//	for (i = 0; i < listRandomOrder.length; ++ i) {
+//		eval("kotae"+i).value = "";
+//	}//for
+//	document.all.texKotae.select();
+//}
+
+const translateLanguage = 'eng-vie';
+const lesson = new URL(location.href).searchParams.get('lesson');
+const listWord = lesson ? eval("listWord_" + lesson) : listWord_reading_1;
+const listRandomOrder = getRangeOfRandom(0, listWord.length);
+
+const maruSen = 0;
+const batsuSen = 0;
+		</script>
+	</head>
+	<body onload="showLang('vie-eng')">
+		<div class="menu">
+			<a href="?lesson=reading_1">Reading 50</a>
+			<a href="?lesson=reading_2">Reading 100</a>
+			<a href="?lesson=reading_3">Reading 150</a>
+			<a href="?lesson=reading_4">Reading 200</a>
+			<br>
+			<a href="?lesson=listening_1">Listening 50</a>
+			<br>
+			<a href="?lesson=equivalent_1">Equivalent terms 50</a>
+		</div>
+		<div class="lang-translate">
+			<span class="btn-lang" onclick="showLang('eng-vie')">Eng - Vie</span>
+			<span class="btn-lang" onclick="showLang('vie-eng')">Vie - Eng</span><br>
+			<div class="random">
+				<input type="checkbox" id="no-random"><label for="no-random">No Random</label>
+			</div>
+		</div>
+		<div></div>
+		<table class="table-questions" cellSpacing="0" cellPadding="0" width="100%" border="0">
+			<tbody>
+				<tr vAlign="top" align="center">
+					<td width="35%">Question</td>
+					<td width="35%">⬇Click to view answer</td>
+					<td width="25%">
+						<div id="Kotae"><input type="text" title="Kotae" value="Type answer. Tab / Enter to next" name="texKotae">
+						</div>
+					</td>
+					<td align="center" width="5%">○ | x</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>
+						<div align="center">&nbsp;</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		<table style="height: 54px;" cellSpacing="0" cellPadding="0" width="40%" border="0">
+			<tr vAlign="top">
+				<td width="25%"><input id="butResult" onclick="viewResult()" type="button" value="Result"></td>
+				<td align="center" width="20%">All
+					<div id="divAllSen"></div>
+				</td>
+				<td align="center" width="29%">Correct
+					<div id="divMaruSen"></div>
+				</td>
+				<td align="center" width="26%">Wrong
+					<div id="divBatsuSen"></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
